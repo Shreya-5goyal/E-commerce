@@ -3,10 +3,7 @@ package gusto.gusto.model;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
+import lombok.*;
 
 import java.util.Locale;
 
@@ -14,6 +11,8 @@ import java.util.Locale;
 @NoArgsConstructor
 @Entity
 @Data
+@Table(name = "products")
+@ToString
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -38,6 +37,10 @@ public class Product {
     @ManyToOne
     @JoinColumn(name ="category_id")
   private category category;
+    @ManyToOne
+    @JoinColumn(name="seller_id")
+    private User user;
+
 
 
 }
