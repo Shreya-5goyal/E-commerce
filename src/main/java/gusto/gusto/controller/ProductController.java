@@ -17,7 +17,7 @@ import java.io.IOException;
 import java.nio.channels.MulticastChannel;
 
 @RestController
-@RequestMapping()
+@RequestMapping("/api")
 public class ProductController {
     @Autowired
     ProductService productService;
